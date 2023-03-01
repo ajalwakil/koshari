@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sh_import_pos.access_import_pos_wizard,access_import_pos_wizard,sh_import_pos.model_import_pos_wizard,base.group_user,1,1,1,1
