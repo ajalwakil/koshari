@@ -8,8 +8,8 @@ class PosSession(models.Model):
         bank_payment_method_diffs = bank_payment_method_diffs or {}
 
         # Add a condition to forcefully close the session, even if there are errors.
-        if self.state != 'closing_control':
-            raise UserError(_("You cannot close the POS session in this state."))
+        if self.state == 'closing_control':
+            self.state = 'closed'
 
         # Comment out or remove the following checks to bypass them
         # if any(order.state == 'draft' for order in self.order_ids):
